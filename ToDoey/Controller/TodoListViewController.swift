@@ -7,20 +7,19 @@
 //
 
 import UIKit
+import CoreData
 
 class TodoListViewController: UITableViewController {
 
    
    var itemArray = [Item()]
-   
-   let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Itmes.plist")
+   let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
    
    
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      
-      loadItems()
+    //  loadItems()
    }
 
    
@@ -60,10 +59,13 @@ class TodoListViewController: UITableViewController {
       
       let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
          
-         let newItem = Item()
-         newItem.title = textField.text!
+        
          
+         let newItem = Item(context: self.context)
+         newItem.title = textField.text!
+         newItem.done = false
          self.itemArray.append(newItem)
+         
          self.saveItems()
       }
       alert.addTextField { (alertTextField) in
@@ -78,28 +80,27 @@ class TodoListViewController: UITableViewController {
    
    
    func saveItems() {
-      let encoder = PropertyListEncoder()
+     
       
-      do{
-         let data = try encoder.encode(itemArray)
-         try data.write(to: dataFilePath!)
+      do {
+       try context.save()
       } catch {
-         print("Error encoding item \(error)")
+         print("Saving Error \(error)")
       }
       
       self.tableView.reloadData()
       }
    
-   func loadItems() {
-      if let data = try? Data(contentsOf: dataFilePath!) {
-         let decoder = PropertyListDecoder()
-         do {
-         itemArray = try decoder.decode([Item].self, from: data)
-         } catch {
-            print("Error \(error)")
-         }
-      }
-   }
+//   func loadItems() {
+//      if let data = try? Data(contentsOf: dataFilePath!) {
+//         let decoder = PropertyListDecoder()
+//         do {
+//         itemArray = try decoder.decode([Item].self, from: data)
+//         } catch {
+//            print("Error \(error)")
+//         }
+//      }
+//   }
 
 }
 
