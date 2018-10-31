@@ -16,8 +16,19 @@
 		730774D72149BCF700BF8ACF /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730774D62149BCF700BF8ACF /* CategoryVC.swift */; };
 		7345AC27214AEB9E0076A5E2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7345AC26214AEB9E0076A5E2 /* Item.swift */; };
 		7345AC29214AEBA90076A5E2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7345AC28214AEBA90076A5E2 /* Category.swift */; };
+		735126E4218A224800699D6C /* ToDoeyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735126E3218A224800699D6C /* ToDoeyUITests.swift */; };
 		73E1D651214C498B00B7EE2B /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E1D650214C498B00B7EE2B /* SwipeTableViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		735126E6218A224800699D6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 730774912146E5FC00BF8ACF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 730774982146E5FD00BF8ACF;
+			remoteInfo = ToDoey;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		730774992146E5FD00BF8ACF /* ToDoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,6 +41,9 @@
 		730774D62149BCF700BF8ACF /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
 		7345AC26214AEB9E0076A5E2 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		7345AC28214AEBA90076A5E2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		735126E1218A224800699D6C /* ToDoeyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoeyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		735126E3218A224800699D6C /* ToDoeyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoeyUITests.swift; sourceTree = "<group>"; };
+		735126E5218A224800699D6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73E1D650214C498B00B7EE2B /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		BAB0245581DF686F1D2E884F /* Pods_ToDoey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF54E4CAF4FAF28A4E632D04 /* Pods-ToDoey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoey.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoey/Pods-ToDoey.release.xcconfig"; sourceTree = "<group>"; };
@@ -42,6 +56,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AA692600471D01E3059157C /* Pods_ToDoey.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		735126DE218A224800699D6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				7307749B2146E5FD00BF8ACF /* ToDoey */,
+				735126E2218A224800699D6C /* ToDoeyUITests */,
 				7307749A2146E5FD00BF8ACF /* Products */,
 				DED4B25ECB7D5AD458A73BD3 /* Pods */,
 				3198753D16670ACA23B4B1B9 /* Frameworks */,
@@ -70,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				730774992146E5FD00BF8ACF /* ToDoey.app */,
+				735126E1218A224800699D6C /* ToDoeyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,6 +130,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		735126E2218A224800699D6C /* ToDoeyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				735126E3218A224800699D6C /* ToDoeyUITests.swift */,
+				735126E5218A224800699D6C /* Info.plist */,
+			);
+			path = ToDoeyUITests;
+			sourceTree = "<group>";
+		};
 		DED4B25ECB7D5AD458A73BD3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,18 +170,40 @@
 			productReference = 730774992146E5FD00BF8ACF /* ToDoey.app */;
 			productType = "com.apple.product-type.application";
 		};
+		735126E0218A224800699D6C /* ToDoeyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 735126EA218A224800699D6C /* Build configuration list for PBXNativeTarget "ToDoeyUITests" */;
+			buildPhases = (
+				735126DD218A224800699D6C /* Sources */,
+				735126DE218A224800699D6C /* Frameworks */,
+				735126DF218A224800699D6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				735126E7218A224800699D6C /* PBXTargetDependency */,
+			);
+			name = ToDoeyUITests;
+			productName = ToDoeyUITests;
+			productReference = 735126E1218A224800699D6C /* ToDoeyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		730774912146E5FC00BF8ACF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = burgeoning;
 				TargetAttributes = {
 					730774982146E5FD00BF8ACF = {
 						CreatedOnToolsVersion = 10.0;
+					};
+					735126E0218A224800699D6C = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 730774982146E5FD00BF8ACF;
 					};
 				};
 			};
@@ -167,6 +221,7 @@
 			projectRoot = "";
 			targets = (
 				730774982146E5FD00BF8ACF /* ToDoey */,
+				735126E0218A224800699D6C /* ToDoeyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -179,6 +234,13 @@
 				730774A72146E5FE00BF8ACF /* LaunchScreen.storyboard in Resources */,
 				730774A42146E5FE00BF8ACF /* Assets.xcassets in Resources */,
 				730774A22146E5FD00BF8ACF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		735126DF218A224800699D6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,12 +272,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ToDoey/Pods-ToDoey-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
@@ -241,7 +305,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		735126DD218A224800699D6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				735126E4218A224800699D6C /* ToDoeyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		735126E7218A224800699D6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 730774982146E5FD00BF8ACF /* ToDoey */;
+			targetProxy = 735126E6218A224800699D6C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		730774A02146E5FD00BF8ACF /* Main.storyboard */ = {
@@ -417,6 +497,46 @@
 			};
 			name = Release;
 		};
+		735126E8218A224800699D6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3H35BWV574;
+				INFOPLIST_FILE = ToDoeyUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.burgeon-ing.ToDoeyUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ToDoey;
+			};
+			name = Debug;
+		};
+		735126E9218A224800699D6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3H35BWV574;
+				INFOPLIST_FILE = ToDoeyUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.burgeon-ing.ToDoeyUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ToDoey;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -434,6 +554,15 @@
 			buildConfigurations = (
 				730774AC2146E5FE00BF8ACF /* Debug */,
 				730774AD2146E5FE00BF8ACF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		735126EA218A224800699D6C /* Build configuration list for PBXNativeTarget "ToDoeyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				735126E8218A224800699D6C /* Debug */,
+				735126E9218A224800699D6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
