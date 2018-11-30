@@ -100,11 +100,10 @@
 		7307749B2146E5FD00BF8ACF /* ToDoey */ = {
 			isa = PBXGroup;
 			children = (
-				730774B12148068700BF8ACF /* Controller */,
 				730774B02148067800BF8ACF /* DataModel */,
-				730774A02146E5FD00BF8ACF /* Main.storyboard */,
+				730774B12148068700BF8ACF /* Controller */,
+				735126EB218A2CBF00699D6C /* View */,
 				730774A32146E5FE00BF8ACF /* Assets.xcassets */,
-				730774A52146E5FE00BF8ACF /* LaunchScreen.storyboard */,
 				730774A82146E5FE00BF8ACF /* Info.plist */,
 			);
 			path = ToDoey;
@@ -137,6 +136,15 @@
 				735126E5218A224800699D6C /* Info.plist */,
 			);
 			path = ToDoeyUITests;
+			sourceTree = "<group>";
+		};
+		735126EB218A2CBF00699D6C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				730774A02146E5FD00BF8ACF /* Main.storyboard */,
+				730774A52146E5FE00BF8ACF /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		DED4B25ECB7D5AD458A73BD3 /* Pods */ = {
@@ -272,14 +280,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ToDoey/Pods-ToDoey-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
