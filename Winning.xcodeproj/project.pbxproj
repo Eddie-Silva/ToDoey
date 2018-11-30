@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1AA692600471D01E3059157C /* Pods_Winning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB0245581DF686F1D2E884F /* Pods_Winning.framework */; };
 		6247F26216B73741E1EAA45E /* Pods_Winning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38429FFBE8AD4F73CDB60C2F /* Pods_Winning.framework */; };
+		7306FC9221B1A48D0051EB6A /* TruthsRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7306FC9121B1A48D0051EB6A /* TruthsRight.swift */; };
+		7306FC9421B1A6170051EB6A /* TruthsLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7306FC9321B1A6170051EB6A /* TruthsLeft.swift */; };
+		7306FC9621B1A9740051EB6A /* TruthsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7306FC9521B1A9740051EB6A /* TruthsViewController.swift */; };
 		7307749D2146E5FD00BF8ACF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7307749C2146E5FD00BF8ACF /* AppDelegate.swift */; };
 		7307749F2146E5FD00BF8ACF /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7307749E2146E5FD00BF8ACF /* TodoListViewController.swift */; };
 		730774A22146E5FD00BF8ACF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 730774A02146E5FD00BF8ACF /* Main.storyboard */; };
@@ -34,6 +37,9 @@
 /* Begin PBXFileReference section */
 		38429FFBE8AD4F73CDB60C2F /* Pods_Winning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Winning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39AECB2F9BACF8443E5CA47C /* Pods-Winning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Winning.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Winning/Pods-Winning.debug.xcconfig"; sourceTree = "<group>"; };
+		7306FC9121B1A48D0051EB6A /* TruthsRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruthsRight.swift; sourceTree = "<group>"; };
+		7306FC9321B1A6170051EB6A /* TruthsLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruthsLeft.swift; sourceTree = "<group>"; };
+		7306FC9521B1A9740051EB6A /* TruthsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruthsViewController.swift; sourceTree = "<group>"; };
 		730774992146E5FD00BF8ACF /* Winning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Winning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7307749C2146E5FD00BF8ACF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7307749E2146E5FD00BF8ACF /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +126,8 @@
 			children = (
 				7345AC28214AEBA90076A5E2 /* Category.swift */,
 				7345AC26214AEB9E0076A5E2 /* Item.swift */,
+				7306FC9121B1A48D0051EB6A /* TruthsRight.swift */,
+				7306FC9321B1A6170051EB6A /* TruthsLeft.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -131,6 +139,7 @@
 				7307749E2146E5FD00BF8ACF /* TodoListViewController.swift */,
 				7307749C2146E5FD00BF8ACF /* AppDelegate.swift */,
 				73E1D650214C498B00B7EE2B /* SwipeTableViewController.swift */,
+				7306FC9521B1A9740051EB6A /* TruthsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -310,12 +319,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7306FC9421B1A6170051EB6A /* TruthsLeft.swift in Sources */,
+				7306FC9221B1A48D0051EB6A /* TruthsRight.swift in Sources */,
 				7307749F2146E5FD00BF8ACF /* TodoListViewController.swift in Sources */,
 				730774D72149BCF700BF8ACF /* CategoryVC.swift in Sources */,
 				7345AC27214AEB9E0076A5E2 /* Item.swift in Sources */,
 				7307749D2146E5FD00BF8ACF /* AppDelegate.swift in Sources */,
 				73E1D651214C498B00B7EE2B /* SwipeTableViewController.swift in Sources */,
 				7345AC29214AEBA90076A5E2 /* Category.swift in Sources */,
+				7306FC9621B1A9740051EB6A /* TruthsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
