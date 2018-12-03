@@ -18,7 +18,7 @@
 		730774A42146E5FE00BF8ACF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 730774A32146E5FE00BF8ACF /* Assets.xcassets */; };
 		730774A72146E5FE00BF8ACF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 730774A52146E5FE00BF8ACF /* LaunchScreen.storyboard */; };
 		730774D72149BCF700BF8ACF /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730774D62149BCF700BF8ACF /* CategoryVC.swift */; };
-		7345AC27214AEB9E0076A5E2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7345AC26214AEB9E0076A5E2 /* Item.swift */; };
+		7345AC27214AEB9E0076A5E2 /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7345AC26214AEB9E0076A5E2 /* Scenario.swift */; };
 		7345AC29214AEBA90076A5E2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7345AC28214AEBA90076A5E2 /* Category.swift */; };
 		735126E4218A224800699D6C /* WinningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735126E3218A224800699D6C /* WinningUITests.swift */; };
 		73E1D651214C498B00B7EE2B /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E1D650214C498B00B7EE2B /* SwipeTableViewController.swift */; };
@@ -48,7 +48,7 @@
 		730774A62146E5FE00BF8ACF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		730774A82146E5FE00BF8ACF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		730774D62149BCF700BF8ACF /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
-		7345AC26214AEB9E0076A5E2 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		7345AC26214AEB9E0076A5E2 /* Scenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
 		7345AC28214AEBA90076A5E2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		735126E1218A224800699D6C /* WinningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WinningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		735126E3218A224800699D6C /* WinningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningUITests.swift; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				7345AC28214AEBA90076A5E2 /* Category.swift */,
-				7345AC26214AEB9E0076A5E2 /* Item.swift */,
+				7345AC26214AEB9E0076A5E2 /* Scenario.swift */,
 				7306FC9121B1A48D0051EB6A /* TruthsRight.swift */,
 				7306FC9321B1A6170051EB6A /* TruthsLeft.swift */,
 			);
@@ -137,9 +137,9 @@
 			children = (
 				730774D62149BCF700BF8ACF /* CategoryVC.swift */,
 				7307749E2146E5FD00BF8ACF /* TodoListViewController.swift */,
-				7307749C2146E5FD00BF8ACF /* AppDelegate.swift */,
-				73E1D650214C498B00B7EE2B /* SwipeTableViewController.swift */,
 				7306FC9521B1A9740051EB6A /* TruthsViewController.swift */,
+				73E1D650214C498B00B7EE2B /* SwipeTableViewController.swift */,
+				7307749C2146E5FD00BF8ACF /* AppDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -323,7 +323,7 @@
 				7306FC9221B1A48D0051EB6A /* TruthsRight.swift in Sources */,
 				7307749F2146E5FD00BF8ACF /* TodoListViewController.swift in Sources */,
 				730774D72149BCF700BF8ACF /* CategoryVC.swift in Sources */,
-				7345AC27214AEB9E0076A5E2 /* Item.swift in Sources */,
+				7345AC27214AEB9E0076A5E2 /* Scenario.swift in Sources */,
 				7307749D2146E5FD00BF8ACF /* AppDelegate.swift in Sources */,
 				73E1D651214C498B00B7EE2B /* SwipeTableViewController.swift in Sources */,
 				7345AC29214AEBA90076A5E2 /* Category.swift in Sources */,

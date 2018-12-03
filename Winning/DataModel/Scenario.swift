@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class Item: Object {
+class Scenario: Object {
    
    @objc dynamic var title: String = ""
   @objc dynamic var done: Bool = false

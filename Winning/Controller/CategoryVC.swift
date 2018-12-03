@@ -14,35 +14,30 @@ class CategoryVC: SwipeTableViewController {
    
    let realm = try! Realm()
 
-   var categoryArray: Results<Category>?
+   var categoryList: Results<Category>?
 
    
    
     override func viewDidLoad() {
-        super.viewDidLoad()
-      
+      super.viewDidLoad()
       loadCategory()
-      tableView.rowHeight = 80.0
-      
+      tableView.rowHeight = 75.0
    }
    
    //MARK:- datasource Methods
    
    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return categoryArray?.count ?? 1
+      return categoryList?.count ?? 1
    }
    
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       
       let cell = super.tableView(tableView, cellForRowAt: indexPath)
-      
-      if let category = categoryArray?[indexPath.row] {
-      
+      if let category = categoryList?[indexPath.row] {
       cell.textLabel?.text = category.name
         
       
       }
-      //UIColor(hexString: cell.backgroundColor.hexValue)
       return cell
    }
    
@@ -57,9 +52,8 @@ class CategoryVC: SwipeTableViewController {
    
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       let destinationVC = segue.destination as! TodoListViewController
-      
       if let indexPath = tableView.indexPathForSelectedRow {
-         destinationVC.selectedCategory = categoryArray?[indexPath.row]
+         destinationVC.selectedCategory = categoryList?[indexPath.row]
          
       }
    }
@@ -69,7 +63,6 @@ class CategoryVC: SwipeTableViewController {
    //MARK:- Data Manipulation methods ( Save and load)
    
    func save(category: Category) {
-      
       do {
          try realm.write {
          realm.add(category)
@@ -79,15 +72,16 @@ class CategoryVC: SwipeTableViewController {
       }
       
       tableView.reloadData()
-   
    }
+  
+  
    //function has default value "= Item.featch...()
    func loadCategory() {
-      categoryArray = realm.objects(Category.self)
+      categoryList = realm.objects(Category.self)
       
       tableView.reloadData()
-      
    }
+  
    
    //MARK:- Delete data with swipe
    
@@ -96,7 +90,7 @@ class CategoryVC: SwipeTableViewController {
       //calls from superclass
       //super.updateModel(at: indexPath)
       
-      if let categoryForDeletion = self.categoryArray?[indexPath.row] {
+      if let categoryForDeletion = self.categoryList?[indexPath.row] {
          do {
             try self.realm.write {
                self.realm.delete(categoryForDeletion)
@@ -115,21 +109,18 @@ class CategoryVC: SwipeTableViewController {
       var textField = UITextField()
       
       let alert = UIAlertController(title: "Add New Category", message: "", preferredStyle: .alert)
-      
       let action = UIAlertAction(title: "Add Category", style: .default) { (action) in
          
-         let newCategory = Category()
-         newCategory.name = textField.text!
-         
-         
-         self.save(category: newCategory)
+        let newCategory = Category()
+        newCategory.name = textField.text!
+        self.save(category: newCategory)
       }
       
       alert.addAction(action)
       
       alert.addTextField { (field) in
-         textField = field
-         textField.placeholder = "Create category"
+        textField.placeholder = "Create category"
+        textField = field
       }
    
       present(alert, animated: true, completion: nil)
