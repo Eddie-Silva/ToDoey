@@ -9,14 +9,13 @@
 import UIKit
 import RealmSwift
 
-class TodoListViewController: SwipeTableViewController {
+class ScenarioListViewController: SwipeTableViewController {
 
-   
+   @IBOutlet weak var searchBar: UISearchBar!
+  
    var scenarioList: Results<Scenario>?
    let realm = try! Realm()
 
-   @IBOutlet weak var searchBar: UISearchBar!
-   
    var selectedCategory : Category? {
       didSet{
          loadScenarios()
@@ -171,7 +170,7 @@ class TodoListViewController: SwipeTableViewController {
 //////////////////
 //MARK:- EXTENSIONS
 
-extension TodoListViewController: UISearchBarDelegate {
+extension ScenarioListViewController: UISearchBarDelegate {
 
    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
       scenarioList = scenarioList?.filter("title CONTAINS %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)

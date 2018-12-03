@@ -12,7 +12,7 @@
         <!--Winning-->
         <scene sceneID="RYR-0K-3as">
             <objects>
-                <tableViewController id="Iz3-I4-j5Q" customClass="CategoryVC" customModule="Winning" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Iz3-I4-j5Q" customClass="CategoryListViewController" customModule="Winning" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="v9P-6s-okL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,7 +50,7 @@
         <!--Scenarios-->
         <scene sceneID="kze-2K-UXm">
             <objects>
-                <tableViewController id="3SH-3Q-FSq" customClass="TodoListViewController" customModule="Winning" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="3SH-3Q-FSq" customClass="ScenarioListViewController" customModule="Winning" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VMk-m8-KKx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

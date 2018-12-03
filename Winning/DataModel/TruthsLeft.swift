@@ -10,8 +10,8 @@ import Foundation
 import RealmSwift
 
 class TruthsLeft: Object {
-  @objc dynamic var leftText: String = ""
+  @objc dynamic var text: String = ""
   @objc dynamic var agreedTruth: Bool = false
 
-  let parentScenario = LinkingObjects(fromType: Scenario.self, property: "leftTruth")
+  var parentScenario = LinkingObjects(fromType: Scenario.self, property: "leftTruth")
 }

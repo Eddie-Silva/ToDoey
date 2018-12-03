@@ -10,14 +10,12 @@ import UIKit
 import RealmSwift
 
 
-class CategoryVC: SwipeTableViewController {
+class CategoryListViewController: SwipeTableViewController {
    
    let realm = try! Realm()
 
    var categoryList: Results<Category>?
 
-   
-   
     override func viewDidLoad() {
       super.viewDidLoad()
       loadCategory()
@@ -31,27 +29,24 @@ class CategoryVC: SwipeTableViewController {
    }
    
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      
       let cell = super.tableView(tableView, cellForRowAt: indexPath)
       if let category = categoryList?[indexPath.row] {
-      cell.textLabel?.text = category.name
-        
-      
+        cell.textLabel?.text = category.name
       }
+    
       return cell
    }
    
    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       
       performSegue(withIdentifier: "goToItems", sender: self)
-//      categoryArray[indexPath.row].done = !categoryArray[indexPath.row].done
-      
-      
+//    categoryList[indexPath.row].done = !categoryList[indexPath.row].done
       tableView.deselectRow(at: indexPath, animated: true)
    }
-   
+  
+  
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      let destinationVC = segue.destination as! TodoListViewController
+      let destinationVC = segue.destination as! ScenarioListViewController
       if let indexPath = tableView.indexPathForSelectedRow {
          destinationVC.selectedCategory = categoryList?[indexPath.row]
          
