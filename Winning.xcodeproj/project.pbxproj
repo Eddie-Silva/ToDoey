@@ -23,6 +23,12 @@
 		735126E4218A224800699D6C /* WinningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735126E3218A224800699D6C /* WinningUITests.swift */; };
 		73CF0A9C21BA012B0085EA9D /* TruthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF0A9A21BA012B0085EA9D /* TruthCell.swift */; };
 		73CF0A9D21BA012B0085EA9D /* TruthCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CF0A9B21BA012B0085EA9D /* TruthCell.xib */; };
+		73CF0AA021BAB9B90085EA9D /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73CF0A9F21BAB9B90085EA9D /* Rubik-Medium.ttf */; };
+		73CF0AA221BAB9C30085EA9D /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73CF0AA121BAB9C30085EA9D /* Rubik-Light.ttf */; };
+		73CF0AA421BABA060085EA9D /* Asap-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73CF0AA321BABA060085EA9D /* Asap-SemiBold.ttf */; };
+		73CF0AA621BABA110085EA9D /* Asap-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73CF0AA521BABA110085EA9D /* Asap-Regular.ttf */; };
+		73CF0AA821BABA250085EA9D /* Karla-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73CF0AA721BABA250085EA9D /* Karla-Bold.ttf */; };
+		73CF0AAA21BABA2B0085EA9D /* Karla-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73CF0AA921BABA2B0085EA9D /* Karla-Regular.ttf */; };
 		73E1D651214C498B00B7EE2B /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E1D650214C498B00B7EE2B /* SwipeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +63,12 @@
 		735126E5218A224800699D6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73CF0A9A21BA012B0085EA9D /* TruthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruthCell.swift; sourceTree = "<group>"; };
 		73CF0A9B21BA012B0085EA9D /* TruthCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TruthCell.xib; sourceTree = "<group>"; };
+		73CF0A9F21BAB9B90085EA9D /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		73CF0AA121BAB9C30085EA9D /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
+		73CF0AA321BABA060085EA9D /* Asap-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Asap-SemiBold.ttf"; sourceTree = "<group>"; };
+		73CF0AA521BABA110085EA9D /* Asap-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Asap-Regular.ttf"; sourceTree = "<group>"; };
+		73CF0AA721BABA250085EA9D /* Karla-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Bold.ttf"; sourceTree = "<group>"; };
+		73CF0AA921BABA2B0085EA9D /* Karla-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Regular.ttf"; sourceTree = "<group>"; };
 		73E1D650214C498B00B7EE2B /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		9D79258F9EE022FDF1B4D7A0 /* Pods-Winning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Winning.release.xcconfig"; path = "Pods/Target Support Files/Pods-Winning/Pods-Winning.release.xcconfig"; sourceTree = "<group>"; };
 		BAB0245581DF686F1D2E884F /* Pods_Winning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Winning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,11 +173,33 @@
 			isa = PBXGroup;
 			children = (
 				730774A02146E5FD00BF8ACF /* Main.storyboard */,
+				73CF0AAB21BABB620085EA9D /* Custom Cells */,
+				73CF0A9E21BAB8FF0085EA9D /* Fonts */,
 				730774A52146E5FE00BF8ACF /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		73CF0A9E21BAB8FF0085EA9D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				73CF0AA921BABA2B0085EA9D /* Karla-Regular.ttf */,
+				73CF0AA721BABA250085EA9D /* Karla-Bold.ttf */,
+				73CF0AA521BABA110085EA9D /* Asap-Regular.ttf */,
+				73CF0AA321BABA060085EA9D /* Asap-SemiBold.ttf */,
+				73CF0AA121BAB9C30085EA9D /* Rubik-Light.ttf */,
+				73CF0A9F21BAB9B90085EA9D /* Rubik-Medium.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		73CF0AAB21BABB620085EA9D /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
 				73CF0A9A21BA012B0085EA9D /* TruthCell.swift */,
 				73CF0A9B21BA012B0085EA9D /* TruthCell.xib */,
 			);
-			path = View;
+			path = "Custom Cells";
 			sourceTree = "<group>";
 		};
 		DED4B25ECB7D5AD458A73BD3 /* Pods */ = {
@@ -262,10 +296,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73CF0AA621BABA110085EA9D /* Asap-Regular.ttf in Resources */,
 				730774A72146E5FE00BF8ACF /* LaunchScreen.storyboard in Resources */,
+				73CF0AA221BAB9C30085EA9D /* Rubik-Light.ttf in Resources */,
 				73CF0A9D21BA012B0085EA9D /* TruthCell.xib in Resources */,
+				73CF0AA421BABA060085EA9D /* Asap-SemiBold.ttf in Resources */,
 				730774A42146E5FE00BF8ACF /* Assets.xcassets in Resources */,
+				73CF0AA821BABA250085EA9D /* Karla-Bold.ttf in Resources */,
+				73CF0AAA21BABA2B0085EA9D /* Karla-Regular.ttf in Resources */,
 				730774A22146E5FD00BF8ACF /* Main.storyboard in Resources */,
+				73CF0AA021BAB9B90085EA9D /* Rubik-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

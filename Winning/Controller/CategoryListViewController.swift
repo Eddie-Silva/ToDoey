@@ -19,7 +19,7 @@ class CategoryListViewController: SwipeTableViewController {
     override func viewDidLoad() {
       super.viewDidLoad()
       loadCategory()
-      tableView.rowHeight = 75.0
+      tableView.rowHeight = 60.0
    }
    
    //MARK:- datasource Methods

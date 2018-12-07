@@ -35,11 +35,13 @@ class TruthsViewController: UIViewController {
       leftTableSection.dataSource = self
       leftTableSection.reloadData()
       leftTableSection.register(UINib(nibName: "TruthCell", bundle: nil), forCellReuseIdentifier: "truthCell")
+      leftTableSection.rowHeight = 50.0
       
       rightTableSection.delegate = self
       rightTableSection.dataSource = self
       rightTableSection.reloadData()
       rightTableSection.register(UINib(nibName: "TruthCell", bundle: nil), forCellReuseIdentifier: "truthCell")
+      rightTableSection.rowHeight = 50.0
      
       
     }
@@ -178,14 +180,14 @@ extension TruthsViewController: UITableViewDelegate, UITableViewDataSource {
       cell = tableView.dequeueReusableCell(withIdentifier: "truthCell", for: indexPath) as? TruthCell
       if let leftyScenario = leftTruths?[indexPath.row] {
         cell?.truthCellText?.text = leftyScenario.text
-        cell?.backgroundColor = leftyScenario.agreedTruth ? #colorLiteral(red: 0.8329799486, green: 1, blue: 0.3445181094, alpha: 1) : #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
+        cell?.backgroundColor = leftyScenario.agreedTruth ? #colorLiteral(red: 0.8329799486, green: 1, blue: 0.3445181094, alpha: 1) : #colorLiteral(red: 0.9568627451, green: 0.8392156863, blue: 0.6901960784, alpha: 1)
       }
     }
     if tableView == self.rightTableSection {
       cell = tableView.dequeueReusableCell(withIdentifier: "truthCell", for: indexPath) as? TruthCell
       if let rightyScenario = rightTruths?[indexPath.row] {
         cell?.truthCellText?.text = rightyScenario.text
-         cell?.backgroundColor = rightyScenario.agreedTruth ? #colorLiteral(red: 0.8329799486, green: 1, blue: 0.3445181094, alpha: 1) : #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
+         cell?.backgroundColor = rightyScenario.agreedTruth ? #colorLiteral(red: 0.8329799486, green: 1, blue: 0.3445181094, alpha: 1) : #colorLiteral(red: 0.9568627451, green: 0.8392156863, blue: 0.6901960784, alpha: 1)
         
       }
       
