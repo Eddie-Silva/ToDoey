@@ -40,6 +40,8 @@ class TruthsViewController: UIViewController {
       rightTableSection.dataSource = self
       rightTableSection.reloadData()
       rightTableSection.register(UINib(nibName: "TruthCell", bundle: nil), forCellReuseIdentifier: "truthCell")
+     
+      
     }
   
   
@@ -117,13 +119,13 @@ class TruthsViewController: UIViewController {
   func loadTruths() {
     self.leftTruths = selectedScenario?.leftTruth.sorted(byKeyPath: "text", ascending: false)
     self.rightTruths = selectedScenario?.rightTruth.sorted(byKeyPath: "text", ascending: false)
+    
     rightTableSection?.reloadData()
     leftTableSection?.reloadData()
   }
   
   
   func updateModel(at indexPath: IndexPath) {
-    //calls from superclass
     //super.updateModel(at: indexPath)
     if let leftItemForDeletion = leftTruths?[indexPath.row] {
       do {
@@ -147,21 +149,6 @@ class TruthsViewController: UIViewController {
   }
   
   
-//  func save(scenario: Scenario) {
-//    do {
-//      try realm.write {
-//        realm.add(scenario)
-//      }
-//    } catch {
-//      print("Saving Error \(error)")
-//    }
-//
-//    leftTableSection.reloadData()
-//    rightTableSection.reloadData()
-//  }
-  
-  
-  
   //MARK: - END TruthsViewController
 }
 
@@ -169,7 +156,7 @@ class TruthsViewController: UIViewController {
 
 //MARK: - TableView Extention - Delegate Methods
 
-extension TruthsViewController: UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate {
+extension TruthsViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if tableView == leftTableSection {
@@ -179,6 +166,7 @@ extension TruthsViewController: UITableViewDelegate, UITableViewDataSource, Swip
     } else {
       print("Error no rows in section")
     }
+    tableView.reloadData()
     return 1
   }
   
@@ -189,21 +177,20 @@ extension TruthsViewController: UITableViewDelegate, UITableViewDataSource, Swip
     if tableView == self.leftTableSection {
       cell = tableView.dequeueReusableCell(withIdentifier: "truthCell", for: indexPath) as? TruthCell
       if let leftyScenario = leftTruths?[indexPath.row] {
-        cell!.textLabel?.text = leftyScenario.text
-      } else {
-          cell!.textLabel?.text = "Add Truth"
-        }
-    } else if tableView == self.rightTableSection {
+        cell?.truthCellText?.text = leftyScenario.text
+        cell?.backgroundColor = leftyScenario.agreedTruth ? #colorLiteral(red: 0.8329799486, green: 1, blue: 0.3445181094, alpha: 1) : #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
+      }
+    }
+    if tableView == self.rightTableSection {
       cell = tableView.dequeueReusableCell(withIdentifier: "truthCell", for: indexPath) as? TruthCell
       if let rightyScenario = rightTruths?[indexPath.row] {
-        cell!.textLabel?.text = rightyScenario.text
-      } else {
-        cell!.textLabel?.text = "Add Truth"
+        cell?.truthCellText?.text = rightyScenario.text
+         cell?.backgroundColor = rightyScenario.agreedTruth ? #colorLiteral(red: 0.8329799486, green: 1, blue: 0.3445181094, alpha: 1) : #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
+        
       }
       
-    } else {
-      print("No cells")
-      }
+    }
+   
     return cell!
   }
   
@@ -213,8 +200,6 @@ extension TruthsViewController: UITableViewDelegate, UITableViewDataSource, Swip
     if tableView == rightTableSection {
       if let truth = rightTruths?[indexPath.row] {
         do {
-          //to delete data from realm object
-          // try realm.delete(item)
           try realm.write {
             truth.agreedTruth = !truth.agreedTruth
           }
@@ -222,57 +207,56 @@ extension TruthsViewController: UITableViewDelegate, UITableViewDataSource, Swip
           print("Error \(error)")
         }
       }
-    } else if tableView == leftTableSection {
+    }
+    if tableView == leftTableSection {
       if let truth = leftTruths?[indexPath.row] {
         do {
           try realm.write {
             truth.agreedTruth = !truth.agreedTruth
+            
           }
         } catch {
           print("Error \(error)")
       }
-    } else {
-      print("no cell selected")
+    }
+    }
+    tableView.deselectRow(at: indexPath, animated: true)
+    tableView.reloadData()
+  }
+  
+  func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    return true
+  }
+  
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+      
+      if tableView == leftTableSection {
+      if let truthForDeletion = leftTruths?[indexPath.row] {
+        do {
+          try self.realm.write {
+            self.realm.delete(truthForDeletion)
+            
+          }
+        } catch {
+          print("ERROR \(error)")
+        }
       }
       
+      }
+      if tableView == rightTableSection {
+        if let truthForDeletion = rightTruths?[indexPath.row] {
+          do {
+            try self.realm.write {
+              self.realm.delete(truthForDeletion)
+            }
+          } catch {
+            print("ERROR \(error)")
+          }
+        }
+      }
+    }
     tableView.reloadData()
-    tableView.deselectRow(at: indexPath, animated: true)
-    }
-//    var textField = UITextField()
-//
-//    let alert = UIAlertController(title: "Add Truth", message: "", preferredStyle: .alert)
-//    let action = UIAlertAction(title: "Add", style: .default) { (action) in
-//
-//      let newTruth = TruthsLeft()
-//      newTruth.text = textField.text!
-//      //self.save(category: newTruth)
-//    }
-//
-//    alert.addAction(action)
-//
-//    alert.addTextField { (field) in
-//      textField = field
-//      textField.placeholder = "Create category"
-//    }
-//
-//    present(alert, animated: true, completion: nil)
   }
-  
-  
-  func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
-    guard orientation == .right else { return nil }
-    
-    let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
-      // handle action by updating model with deletion
-      
-      self.updateModel(at: indexPath)
-    }
-    
-    // customize the action appearance
-    deleteAction.image = UIImage(named: "delete-icon")
-    
-    return [deleteAction]
-  }
-  
   
 }

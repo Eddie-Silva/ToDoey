@@ -88,6 +88,7 @@ class CategoryListViewController: SwipeTableViewController {
       if let categoryForDeletion = self.categoryList?[indexPath.row] {
          do {
             try self.realm.write {
+              self.realm.delete(categoryForDeletion.scenario)
                self.realm.delete(categoryForDeletion)
             }
          } catch {

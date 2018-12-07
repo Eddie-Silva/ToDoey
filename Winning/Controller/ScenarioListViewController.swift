@@ -23,7 +23,6 @@ class ScenarioListViewController: SwipeTableViewController {
   
    override func viewDidLoad() {
       super.viewDidLoad()
-      tableView.separatorStyle = .none
    }
   
    override func viewWillAppear(_ animated: Bool) {
@@ -137,10 +136,12 @@ class ScenarioListViewController: SwipeTableViewController {
    override func updateModel(at indexPath: IndexPath) {
       //calls from superclass
       //super.updateModel(at: indexPath)
-    if let itemForDeletion = scenarioList?[indexPath.row] {
+    if let scenarioForDeletion = scenarioList?[indexPath.row] {
       do {
         try self.realm.write {
-          self.realm.delete(itemForDeletion)
+          self.realm.delete(scenarioForDeletion.leftTruth)
+          self.realm.delete(scenarioForDeletion.rightTruth)
+          self.realm.delete(scenarioForDeletion)
         }
       } catch {
           print("ERROR \(error)")

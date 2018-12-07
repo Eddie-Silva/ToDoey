@@ -10,7 +10,8 @@ import UIKit
 
 class TruthCell: UITableViewCell {
 
-    override func awakeFromNib() {
+  @IBOutlet weak var truthCellText: UILabel!
+  override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
