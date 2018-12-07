@@ -57,17 +57,17 @@ class ScenarioListViewController: SwipeTableViewController {
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     performSegue(withIdentifier: "ToTruths", sender: self)
-    if let scenario = scenarioList?[indexPath.row] {
-      do {
-        //to delete data from realm object
-        // try realm.delete(item)
-        try realm.write {
-          scenario.done = !scenario.done
-        }
-      } catch {
-          print("Error \(error)")
-        }
-    }
+//    if let scenario = scenarioList?[indexPath.row] {
+//      do {
+//        //to delete data from realm object
+//        // try realm.delete(item)
+//        try realm.write {
+//          scenario.done = !scenario.done
+//        }
+//      } catch {
+//          print("Error \(error)")
+//        }
+//    }
    
     tableView.reloadData()
     tableView.deselectRow(at: indexPath, animated: true)

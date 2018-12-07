@@ -33,9 +33,13 @@ class TruthsViewController: UIViewController {
 
       leftTableSection.delegate = self
       leftTableSection.dataSource = self
+      leftTableSection.reloadData()
+      leftTableSection.register(UINib(nibName: "TruthCell", bundle: nil), forCellReuseIdentifier: "truthCell")
       
       rightTableSection.delegate = self
       rightTableSection.dataSource = self
+      rightTableSection.reloadData()
+      rightTableSection.register(UINib(nibName: "TruthCell", bundle: nil), forCellReuseIdentifier: "truthCell")
     }
   
   
@@ -168,6 +172,13 @@ class TruthsViewController: UIViewController {
 extension TruthsViewController: UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    if tableView == leftTableSection {
+      return leftTruths?.count ?? 1
+    } else if tableView == rightTableSection {
+      return rightTruths?.count ?? 1
+    } else {
+      print("Error no rows in section")
+    }
     return 1
   }
   
