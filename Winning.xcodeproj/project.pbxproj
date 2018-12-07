@@ -21,6 +21,8 @@
 		7345AC27214AEB9E0076A5E2 /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7345AC26214AEB9E0076A5E2 /* Scenario.swift */; };
 		7345AC29214AEBA90076A5E2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7345AC28214AEBA90076A5E2 /* Category.swift */; };
 		735126E4218A224800699D6C /* WinningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735126E3218A224800699D6C /* WinningUITests.swift */; };
+		73CF0A9C21BA012B0085EA9D /* TruthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF0A9A21BA012B0085EA9D /* TruthCell.swift */; };
+		73CF0A9D21BA012B0085EA9D /* TruthCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CF0A9B21BA012B0085EA9D /* TruthCell.xib */; };
 		73E1D651214C498B00B7EE2B /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E1D650214C498B00B7EE2B /* SwipeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,8 @@
 		735126E1218A224800699D6C /* WinningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WinningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		735126E3218A224800699D6C /* WinningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningUITests.swift; sourceTree = "<group>"; };
 		735126E5218A224800699D6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73CF0A9A21BA012B0085EA9D /* TruthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruthCell.swift; sourceTree = "<group>"; };
+		73CF0A9B21BA012B0085EA9D /* TruthCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TruthCell.xib; sourceTree = "<group>"; };
 		73E1D650214C498B00B7EE2B /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		9D79258F9EE022FDF1B4D7A0 /* Pods-Winning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Winning.release.xcconfig"; path = "Pods/Target Support Files/Pods-Winning/Pods-Winning.release.xcconfig"; sourceTree = "<group>"; };
 		BAB0245581DF686F1D2E884F /* Pods_Winning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Winning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +162,8 @@
 			children = (
 				730774A02146E5FD00BF8ACF /* Main.storyboard */,
 				730774A52146E5FE00BF8ACF /* LaunchScreen.storyboard */,
+				73CF0A9A21BA012B0085EA9D /* TruthCell.swift */,
+				73CF0A9B21BA012B0085EA9D /* TruthCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -257,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				730774A72146E5FE00BF8ACF /* LaunchScreen.storyboard in Resources */,
+				73CF0A9D21BA012B0085EA9D /* TruthCell.xib in Resources */,
 				730774A42146E5FE00BF8ACF /* Assets.xcassets in Resources */,
 				730774A22146E5FD00BF8ACF /* Main.storyboard in Resources */,
 			);
@@ -320,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7306FC9421B1A6170051EB6A /* TruthsLeft.swift in Sources */,
+				73CF0A9C21BA012B0085EA9D /* TruthCell.swift in Sources */,
 				7306FC9221B1A48D0051EB6A /* TruthsRight.swift in Sources */,
 				7307749F2146E5FD00BF8ACF /* ScenarioListViewController.swift in Sources */,
 				730774D72149BCF700BF8ACF /* CategoryListViewController.swift in Sources */,

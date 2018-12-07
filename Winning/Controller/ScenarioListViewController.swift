@@ -12,10 +12,9 @@ import RealmSwift
 class ScenarioListViewController: SwipeTableViewController {
 
    @IBOutlet weak var searchBar: UISearchBar!
+   let realm = try! Realm()
   
    var scenarioList: Results<Scenario>?
-   let realm = try! Realm()
-
    var selectedCategory : Category? {
       didSet{
          loadScenarios()
@@ -79,7 +78,7 @@ class ScenarioListViewController: SwipeTableViewController {
     let destinationVC = segue.destination as! TruthsViewController
     if let indexPath = tableView.indexPathForSelectedRow {
       //switched scenarioList from scenarioArray
-      destinationVC.selectedTruths = scenarioList?[indexPath.row]
+      destinationVC.selectedScenario = scenarioList?[indexPath.row]
     }
   }
   

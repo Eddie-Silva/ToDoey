@@ -12,12 +12,11 @@ import SwipeCellKit
 class TruthsViewController: UIViewController {
   
   
+   let realm = try! Realm()
   
   var leftTruths: Results<TruthsLeft>?
   var rightTruths: Results<TruthsRight>?
-  let realm = try! Realm()
-  
-  var selectedTruth : Scenario? {
+  var selectedScenario : Scenario? {
     didSet{
       loadTruths()
     }
@@ -25,17 +24,9 @@ class TruthsViewController: UIViewController {
   
   @IBOutlet weak var leftView: UIView!
   @IBOutlet weak var rightView: UIView!
-  @IBOutlet weak var progressView: UIView!
   @IBOutlet weak var leftTableSection: UITableView!
   @IBOutlet weak var rightTableSection: UITableView!
-  @IBOutlet weak var leftTitle: UILabel!
-  @IBOutlet weak var rightTitle: UILabel!
   
-  var selectedTruths : Scenario? {
-    didSet{
-     // loadItems()
-    }
-  }
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,12 +42,11 @@ class TruthsViewController: UIViewController {
   //////////////////////////////////////////////////////
   //MARK: - ADD TRUTHS button pressed
   @IBAction func leftButtonPressed(_ sender: UIButton) {
-    func addTruths() {
       var textField = UITextField()
       let alert = UIAlertController(title: "Add Truth", message: "", preferredStyle: .alert)
       let action = UIAlertAction(title: "Add", style: .default) { (action) in
         
-        if let currentScenario = self.selectedTruth {
+        if let currentScenario = self.selectedScenario {
           do {
             try self.realm.write {
               let newLeftTruth = TruthsLeft()
@@ -81,16 +71,14 @@ class TruthsViewController: UIViewController {
       alert.addAction(action)
       self.present(alert, animated: true, completion: nil)
     }
-  }
   
   
   @IBAction func rightButtonPressed(_ sender: UIButton) {
-    func addTruths() {
       var textField = UITextField()
       let alert = UIAlertController(title: "Add Truth", message: "", preferredStyle: .alert)
       let action = UIAlertAction(title: "Add", style: .default) { (action) in
         
-        if let currentScenario = self.selectedTruth {
+        if let currentScenario = self.selectedScenario {
           do {
             try self.realm.write {
               let newRightTruth = TruthsRight()
@@ -115,7 +103,6 @@ class TruthsViewController: UIViewController {
       alert.addAction(action)
       self.present(alert, animated: true, completion: nil)
     }
-  }
   
   
   
@@ -124,9 +111,10 @@ class TruthsViewController: UIViewController {
   //MARK: - LOAD and SAVE Data Methods
   
   func loadTruths() {
-    self.leftTruths = selectedTruth?.leftTruth.sorted(byKeyPath: "text", ascending: false)
-    self.rightTruths = selectedTruth?.rightTruth.sorted(byKeyPath: "text", ascending: false)
-    rightTableSection.reloadData()
+    self.leftTruths = selectedScenario?.leftTruth.sorted(byKeyPath: "text", ascending: false)
+    self.rightTruths = selectedScenario?.rightTruth.sorted(byKeyPath: "text", ascending: false)
+    rightTableSection?.reloadData()
+    leftTableSection?.reloadData()
   }
   
   
@@ -155,18 +143,18 @@ class TruthsViewController: UIViewController {
   }
   
   
-  func save(scenario: Scenario) {
-    do {
-      try realm.write {
-        realm.add(scenario)
-      }
-    } catch {
-      print("Saving Error \(error)")
-    }
-    
-    leftTableSection.reloadData()
-    rightTableSection.reloadData()
-  }
+//  func save(scenario: Scenario) {
+//    do {
+//      try realm.write {
+//        realm.add(scenario)
+//      }
+//    } catch {
+//      print("Saving Error \(error)")
+//    }
+//
+//    leftTableSection.reloadData()
+//    rightTableSection.reloadData()
+//  }
   
   
   
@@ -184,60 +172,79 @@ extension TruthsViewController: UITableViewDelegate, UITableViewDataSource, Swip
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    var cell: UITableViewCell?
-//    let leftCell = tableView.dequeueReusableCell(withIdentifier: "Lcell", for: indexPath)
-//    let rightCell = tableView.dequeueReusableCell(withIdentifier: "Rcell", for: indexPath)
-//    if let leftyScenario = leftTruths?[indexPath.row] {
-//      leftCell.textLabel?.text = leftyScenario.leftText
-//      //cell.accessoryType = leftyScenario.done ? .checkmark : .none
-//    } else {
-//      leftCell.textLabel?.text = "No Scenarios"
-//      }
-//
-//    return cell
+    var cell = tableView.dequeueReusableCell(withIdentifier: "truthCell", for: indexPath) as? TruthCell
+
     
     if tableView == self.leftTableSection {
-      cell = tableView.dequeueReusableCell(withIdentifier: "Lcell", for: indexPath)
+      cell = tableView.dequeueReusableCell(withIdentifier: "truthCell", for: indexPath) as? TruthCell
       if let leftyScenario = leftTruths?[indexPath.row] {
         cell!.textLabel?.text = leftyScenario.text
       } else {
-          cell!.textLabel?.text = "No Scenarios"
+          cell!.textLabel?.text = "Add Truth"
         }
-    }
-    
-    
-    if tableView == self.rightTableSection {
-      cell = tableView.dequeueReusableCell(withIdentifier: "Rcell", for: indexPath)
+    } else if tableView == self.rightTableSection {
+      cell = tableView.dequeueReusableCell(withIdentifier: "truthCell", for: indexPath) as? TruthCell
       if let rightyScenario = rightTruths?[indexPath.row] {
         cell!.textLabel?.text = rightyScenario.text
       } else {
-        cell!.textLabel?.text = "No Scenarios"
+        cell!.textLabel?.text = "Add Truth"
       }
       
-    }
-      return cell!
-    }
+    } else {
+      print("No cells")
+      }
+    return cell!
+  }
   
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    var textField = UITextField()
     
-    let alert = UIAlertController(title: "Add Truth", message: "", preferredStyle: .alert)
-    let action = UIAlertAction(title: "Add", style: .default) { (action) in
+    if tableView == rightTableSection {
+      if let truth = rightTruths?[indexPath.row] {
+        do {
+          //to delete data from realm object
+          // try realm.delete(item)
+          try realm.write {
+            truth.agreedTruth = !truth.agreedTruth
+          }
+        } catch {
+          print("Error \(error)")
+        }
+      }
+    } else if tableView == leftTableSection {
+      if let truth = leftTruths?[indexPath.row] {
+        do {
+          try realm.write {
+            truth.agreedTruth = !truth.agreedTruth
+          }
+        } catch {
+          print("Error \(error)")
+      }
+    } else {
+      print("no cell selected")
+      }
       
-      let newTruth = TruthsLeft()
-      newTruth.text = textField.text!
-      //self.save(category: newTruth)
+    tableView.reloadData()
+    tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-    alert.addAction(action)
-    
-    alert.addTextField { (field) in
-      textField = field
-      textField.placeholder = "Create category"
-    }
-    
-    present(alert, animated: true, completion: nil)
+//    var textField = UITextField()
+//
+//    let alert = UIAlertController(title: "Add Truth", message: "", preferredStyle: .alert)
+//    let action = UIAlertAction(title: "Add", style: .default) { (action) in
+//
+//      let newTruth = TruthsLeft()
+//      newTruth.text = textField.text!
+//      //self.save(category: newTruth)
+//    }
+//
+//    alert.addAction(action)
+//
+//    alert.addTextField { (field) in
+//      textField = field
+//      textField.placeholder = "Create category"
+//    }
+//
+//    present(alert, animated: true, completion: nil)
   }
   
   

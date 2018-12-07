@@ -103,17 +103,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vv3-Fw-tTZ">
-                                <rect key="frame" x="195" y="156" width="180" height="491"/>
+                                <rect key="frame" x="195" y="156" width="180" height="499"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" tag="2" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gJ9-6b-2pc">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="491"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="176" height="499"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Rcell" id="h7s-61-lwQ">
-                                                <rect key="frame" x="0.0" y="28" width="180" height="44"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Rcell" id="h7s-61-lwQ" customClass="TruthCell" customModule="Winning" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="176" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h7s-61-lwQ" id="TR3-x4-wvT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="176" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
@@ -122,7 +122,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.83297994860000002" green="1" blue="0.34451810939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="gJ9-6b-2pc" secondAttribute="trailing" id="5V0-2I-khv"/>
+                                    <constraint firstAttribute="trailing" secondItem="gJ9-6b-2pc" secondAttribute="trailing" constant="4" id="5V0-2I-khv"/>
                                     <constraint firstAttribute="bottom" secondItem="gJ9-6b-2pc" secondAttribute="bottom" id="8K0-c8-wBI"/>
                                     <constraint firstItem="gJ9-6b-2pc" firstAttribute="leading" secondItem="Vv3-Fw-tTZ" secondAttribute="leading" id="FwF-DR-wpA"/>
                                     <constraint firstItem="gJ9-6b-2pc" firstAttribute="top" secondItem="Vv3-Fw-tTZ" secondAttribute="top" id="dNn-HZ-90v"/>
@@ -142,18 +142,14 @@
                                     <action selector="rightButtonPressed:" destination="ttE-Ee-Shh" eventType="touchUpInside" id="wok-Gl-fTp"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1F-uP-M4x">
-                                <rect key="frame" x="0.0" y="647" width="375" height="20"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sBu-we-F9t">
-                                <rect key="frame" x="0.0" y="156" width="180" height="491"/>
+                                <rect key="frame" x="0.0" y="156" width="180" height="499"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5By-6T-XEZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="491"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="499"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Lcell" id="2BG-L5-bJa">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Lcell" id="2BG-L5-bJa" customClass="TruthCell" customModule="Winning" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="180" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2BG-L5-bJa" id="o3P-uS-rnz">
@@ -175,33 +171,28 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="x1F-uP-M4x" firstAttribute="bottom" secondItem="J5T-wi-mLa" secondAttribute="bottom" id="2eF-Tb-huU"/>
                             <constraint firstItem="Vv3-Fw-tTZ" firstAttribute="trailing" secondItem="J5T-wi-mLa" secondAttribute="trailing" id="6lC-cI-YV7"/>
                             <constraint firstItem="wl4-e2-E89" firstAttribute="trailing" secondItem="J5T-wi-mLa" secondAttribute="trailing" id="9DE-I1-2MM"/>
                             <constraint firstItem="Ecm-IN-Qha" firstAttribute="width" secondItem="bGT-GT-AsI" secondAttribute="width" multiplier="0.48" id="AOB-2o-iwB"/>
-                            <constraint firstItem="x1F-uP-M4x" firstAttribute="trailing" secondItem="J5T-wi-mLa" secondAttribute="trailing" id="Gwz-lD-hfy"/>
                             <constraint firstItem="Ecm-IN-Qha" firstAttribute="top" secondItem="J5T-wi-mLa" secondAttribute="top" id="JYJ-lc-Kxf"/>
                             <constraint firstItem="Vv3-Fw-tTZ" firstAttribute="width" secondItem="bGT-GT-AsI" secondAttribute="width" multiplier="0.48" id="NEh-hP-jvw"/>
                             <constraint firstItem="sBu-we-F9t" firstAttribute="width" secondItem="bGT-GT-AsI" secondAttribute="width" multiplier="0.48" id="T5n-Xm-ZaL"/>
-                            <constraint firstItem="x1F-uP-M4x" firstAttribute="leading" secondItem="J5T-wi-mLa" secondAttribute="leading" id="X37-vA-rtK"/>
                             <constraint firstItem="Vv3-Fw-tTZ" firstAttribute="top" secondItem="wl4-e2-E89" secondAttribute="bottom" id="Y1A-D9-ltS"/>
                             <constraint firstItem="wl4-e2-E89" firstAttribute="width" secondItem="bGT-GT-AsI" secondAttribute="width" multiplier="0.48" id="dO1-Zw-yKA"/>
+                            <constraint firstItem="J5T-wi-mLa" firstAttribute="bottom" secondItem="sBu-we-F9t" secondAttribute="bottom" constant="12" id="frC-DG-ERE"/>
                             <constraint firstItem="wl4-e2-E89" firstAttribute="top" secondItem="J5T-wi-mLa" secondAttribute="top" id="iNE-CU-TJD"/>
+                            <constraint firstItem="J5T-wi-mLa" firstAttribute="bottom" secondItem="Vv3-Fw-tTZ" secondAttribute="bottom" constant="12" id="j64-71-8Va"/>
                             <constraint firstItem="wl4-e2-E89" firstAttribute="height" secondItem="bGT-GT-AsI" secondAttribute="height" multiplier="0.06" id="kTS-Rj-nVt"/>
-                            <constraint firstItem="x1F-uP-M4x" firstAttribute="top" secondItem="Vv3-Fw-tTZ" secondAttribute="bottom" id="lIT-vX-joB"/>
                             <constraint firstItem="sBu-we-F9t" firstAttribute="leading" secondItem="J5T-wi-mLa" secondAttribute="leading" id="mSH-d3-FnK"/>
                             <constraint firstItem="Ecm-IN-Qha" firstAttribute="leading" secondItem="J5T-wi-mLa" secondAttribute="leading" id="nKM-0D-tRx"/>
                             <constraint firstItem="Ecm-IN-Qha" firstAttribute="height" secondItem="bGT-GT-AsI" secondAttribute="height" multiplier="0.06" id="oQb-da-gXu"/>
-                            <constraint firstItem="x1F-uP-M4x" firstAttribute="top" secondItem="sBu-we-F9t" secondAttribute="bottom" id="psw-6A-MbU"/>
                             <constraint firstItem="sBu-we-F9t" firstAttribute="top" secondItem="Ecm-IN-Qha" secondAttribute="bottom" id="tVV-Tz-dLU"/>
-                            <constraint firstItem="x1F-uP-M4x" firstAttribute="height" secondItem="bGT-GT-AsI" secondAttribute="height" multiplier="0.03" id="vJL-xD-Zsd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="J5T-wi-mLa"/>
                     </view>
                     <connections>
                         <outlet property="leftTableSection" destination="5By-6T-XEZ" id="Gzh-A1-e1j"/>
                         <outlet property="leftView" destination="sBu-we-F9t" id="JJk-dE-B6F"/>
-                        <outlet property="progressView" destination="x1F-uP-M4x" id="Pce-bg-yva"/>
                         <outlet property="rightTableSection" destination="gJ9-6b-2pc" id="Vi6-q0-p8D"/>
                         <outlet property="rightView" destination="Vv3-Fw-tTZ" id="iDv-h5-kIF"/>
                     </connections>
